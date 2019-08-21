@@ -36,7 +36,7 @@ stages:
   - Test
   - Build
   - name: Deploy
-    if: branch = master AND type IN (push)
+    if: branch = master
 
 jobs:
   fast_finish: true
@@ -127,17 +127,3 @@ jobs:
       env:
         - NODE_VERSION="8"
         - VARIANT="centos"
-
-    - stage: Build
-      before_script: *auto_skip
-      name: chakracore/10 on default
-      env:
-        - NODE_VERSION="chakracore/10"
-        - VARIANT="default"
-
-    - stage: Build
-      before_script: *auto_skip
-      name: chakracore/8 on default
-      env:
-        - NODE_VERSION="chakracore/8"
-        - VARIANT="default"

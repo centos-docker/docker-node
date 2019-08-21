@@ -34,7 +34,7 @@ stages:
   - Test
   - Build
   - name: Deploy
-    if: branch = master AND type IN (push)
+    if: branch = master
 
 jobs:
   fast_finish: true

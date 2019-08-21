@@ -25,11 +25,11 @@ if [[ "${COMMIT_MESSAGE}" =~ Merge\ pull\ request\ \#([0-9]*) ]]; then
   COMMIT_MESSAGE="$(printf "%s" "${COMMIT_MESSAGE}" | tail -n 1)"
 fi
 
-IMAGES_FILE="library/node"
+IMAGES_FILE="centosx64/node"
 REPO_NAME="official-images"
 ORIGIN_SLUG="${GITHUB_USERNAME}/${REPO_NAME}"
-UPSTREAM_SLUG="${AUTOPR_UPSTREAM:-docker-library}/${REPO_NAME}"
-DOCKER_SLUG="${TRAVIS_REPO_SLUG:-nodejs/docker-node}"
+UPSTREAM_SLUG="${AUTOPR_UPSTREAM:-centos-docker}/${REPO_NAME}"
+DOCKER_SLUG="${TRAVIS_REPO_SLUG:-centos-docker/node}"
 gitpath="../${REPO_NAME}"
 
 function auth_header() {
